@@ -16,19 +16,22 @@ class $CLASS$ extends ServiceProvider
     {
         $this->registerTranslations();
         $this->registerConfig();
-        $this->registerViews();
         $this->registerFactories();
         $this->loadMigrationsFrom(__DIR__ . '/../$MIGRATIONS_PATH$');
     }
 
     /**
-     * Register the service provider.
+     * Register any application services.
      *
      * @return void
      */
     public function register()
     {
-        $this->app->register(RouteServiceProvider::class);
+        $this->app->router->group([
+            'namespace' => '$MODULE_NAMESPACE$\$MODULE$\$CONTROLLERS_NAMESPACE$',
+        ], function ($router) {
+            require __DIR__ . '/..$WEB_ROUTES_PATH$';
+        });
     }
 
     /**
@@ -44,26 +47,6 @@ class $CLASS$ extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__.'/../$PATH_CONFIG$/config.php', '$LOWER_NAME$'
         );
-    }
-
-    /**
-     * Register views.
-     *
-     * @return void
-     */
-    public function registerViews()
-    {
-        $viewPath = resource_path('views/modules/$LOWER_NAME$');
-
-        $sourcePath = __DIR__.'/../$PATH_VIEWS$';
-
-        $this->publishes([
-            $sourcePath => $viewPath
-        ],'views');
-
-        $this->loadViewsFrom(array_merge(array_map(function ($path) {
-            return $path . '/modules/$LOWER_NAME$';
-        }, \Config::get('view.paths')), [$sourcePath]), '$LOWER_NAME$');
     }
 
     /**

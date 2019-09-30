@@ -90,6 +90,8 @@ class ProviderMakeCommand extends GeneratorCommand
             'PATH_CONFIG'       => GenerateConfigReader::read('config')->getPath(),
             'MIGRATIONS_PATH'   => GenerateConfigReader::read('migration')->getPath(),
             'FACTORIES_PATH'    => GenerateConfigReader::read('factory')->getPath(),
+            'WEB_ROUTES_PATH'   => $this->getWebRoutesPath(),
+            'CONTROLLERS_NAMESPACE' => str_replace('/', '\\', GenerateConfigReader::read('controller')->getPath()),
         ]))->render();
     }
 
@@ -111,5 +113,13 @@ class ProviderMakeCommand extends GeneratorCommand
     private function getFileName()
     {
         return Str::studly($this->argument('name'));
+    }
+
+    /**
+     * @return mixed
+     */
+    protected function getWebRoutesPath()
+    {
+        return '/' . $this->laravel['modules']->config('stubs.files.routes/web', 'Routes/web.php');
     }
 }
