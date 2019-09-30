@@ -2,7 +2,7 @@
 
 namespace Nwidart\Modules\Migrations;
 
-use Illuminate\Contracts\Foundation\Application;
+use Laravel\Lumen\Application;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Nwidart\Modules\Module;
