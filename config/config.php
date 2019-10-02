@@ -26,7 +26,7 @@ return [
 
     'stubs' => [
         'enabled' => false,
-        'path' => base_path() . '/vendor/nwidart/laravel-modules/src/Commands/stubs',
+        'path' => base_path() . '/vendor/serVme/lumen-modules/src/Commands/stubs',
         'files' => [
             'routes/web' => 'V1/Routes/web.php',
             // 'routes/api' => 'Routes/api.php',
@@ -112,9 +112,8 @@ return [
             'assets' => ['path' => 'Resources/assets', 'generate' => false],
             'lang' => ['path' => 'Resources/lang', 'generate' => false],
             'views' => ['path' => 'Resources/views', 'generate' => false],
-            'test' => ['path' => 'V1/Tests', 'generate' => true],
-            // 'test' => ['path' => 'Tests/Unit', 'generate' => true],
-            'test-feature' => ['path' => 'Tests/Feature', 'generate' => false],
+            'test' => ['path' => 'V1/Tests/Unit', 'generate' => true],
+            'test-feature' => ['path' => 'V1/Tests/Feature', 'generate' => false],
             'repository' => ['path' => 'Repositories', 'generate' => false],
             'event' => ['path' => 'Events', 'generate' => true],
             'listener' => ['path' => 'Listeners', 'generate' => true],
@@ -152,10 +151,10 @@ return [
     */
 
     'composer' => [
-        'vendor' => 'nwidart',
+        'vendor' => 'serVme',
         'author' => [
-            'name' => 'Nicolas Widart',
-            'email' => 'n.widart@gmail.com',
+            'name' => 'serVme Dev',
+            'email' => 'dev@servmeco.com',
         ],
     ],
     /*
@@ -168,12 +167,12 @@ return [
     */
     'cache' => [
         'enabled' => false,
-        'key' => 'laravel-modules',
+        'key' => 'lumen-modules',
         'lifetime' => 60,
     ],
     /*
     |--------------------------------------------------------------------------
-    | Choose what laravel-modules will register as custom namespaces.
+    | Choose what lumen-modules will register as custom namespaces.
     | Setting one to false will require you to register that part
     | in your own Service Provider class.
     |--------------------------------------------------------------------------

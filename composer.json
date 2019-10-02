@@ -1,6 +1,6 @@
 {
-  "name": "geosalameh/lumen-modules",
-  "description": "Laravel Module management",
+  "name": "servme/lumen-modules",
+  "description": "Lumen Module management",
   "keywords": [
     "modules",
     "laravel",
