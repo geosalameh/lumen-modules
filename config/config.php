@@ -113,7 +113,7 @@ return [
             'lang' => ['path' => 'Resources/lang', 'generate' => false],
             'views' => ['path' => 'Resources/views', 'generate' => false],
             'test' => ['path' => 'V1/Tests/Unit', 'generate' => true],
-            'test-feature' => ['path' => 'V1/Tests/Feature', 'generate' => false],
+            'test-feature' => ['path' => 'V1/Tests/Feature', 'generate' => true],
             'repository' => ['path' => 'Repositories', 'generate' => false],
             'event' => ['path' => 'Events', 'generate' => true],
             'listener' => ['path' => 'Listeners', 'generate' => true],
