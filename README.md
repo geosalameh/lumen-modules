@@ -50,7 +50,7 @@ By default the module classes are not loaded automatically. You can autoload you
   "autoload": {
     "psr-4": {
       "App\\": "app/",
-      "Modules\\": "Modules/"
+      "Modules\\": "modules/"
     }
   }
 }
